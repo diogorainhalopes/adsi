@@ -1,27 +1,27 @@
 ---
-title: 🪴 Quartz 3.3
+title: README
 enableToc: false
 ---
 
 Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-thought) for free. Quartz features
 
 1. Extremely fast natural-language [[notes/search]]
-2. Customizable and hackable design based on [Hugo](https://gohugo.io/)
-3. Automatically generated backlinks, link previews, and local graph
-4. Built-in [[notes/CJK + Latex Support (测试) | CJK + Latex Support]] and [[notes/callouts | Admonition-style callouts]]
-5. Support for both Markdown Links and Wikilinks
 
-Check out some of the [amazing gardens that community members](notes/showcase.md) have published with Quartz or read about [why I made Quartz](notes/philosophy.md) to begin with.
+### Syllabus
+1. Storage Management. Relational data storage: Organization of Records in Files; Semi-structured data storage; Data replication and partitioning strategies; Main-memory databases; Graph Databases 
+2. Indexing. Relational Ordered Indexes: B+tree insertion and deletion algorithms; Dynamic Hashing (extendable hashing); OLAP indexes: bitmap, column-store.
+3. Query Processing and Optimization. Relational Execution Algorithms; Transformation of relational algebra expressions using equivalence rules; Cost-based Optimization. Distributed Query Processing; Parallel join algorithms; Map-reduce for data processing. 
+4. Concurrency Control and Recovery Management: Multi-version concurrency control algorithms; ARIES algorithm; Distributed Transaction Management; CAP theorem. 
+5. Database Tuning: : Schema, Query, Index, Log/Lock, OS/HW. 
+6. Data-intensive systems implementation. Database as a Service. Examples of cloud database services and systems. 
+7. Streaming databases
 
-## Get Started
-> 📚 Step 1: [Setup your own digital garden using Quartz](notes/setup.md)
+### Links
+- https://fenix.tecnico.ulisboa.pt/disciplinas/AOBD/2022-2023/2-semestre/pagina-inicial
+- http://groups.tecnico.ulisboa.pt/adsi-meic/
+- https://videoconf-colibri.zoom.us/j/85198133883?pwd=WEZraGFaVWdicTRza0pQYndGcWRsdz09
 
-Returning user? Figure out how to [[notes/updating|update]] your existing Quartz garden.
-
-If you prefer browsing the contents of this site through a list instead of a graph, you see a list of all [setup-related notes](/tags/setup).
-
-### Troubleshooting
-- 🚧 [Troubleshooting and FAQ](notes/troubleshooting.md)
-- 🐛 [Submit an Issue](https://github.com/jackyzha0/quartz/issues)
-- 👀 [Discord Community](https://discord.gg/cRFFHYye7t)
+### Backlinks
+- [[Index Lab Notes]]
+- [[Lectures-Notes/Index-Lecture-Notes.md]]
 

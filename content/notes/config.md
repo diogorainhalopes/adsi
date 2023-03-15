@@ -58,7 +58,7 @@ enableGitHubEdit: true
 GitHubLink: https://github.com/jackyzha0/quartz/tree/hugo/content
 
 # whether to render mermaid diagrams
-enableMermaid: true
+enableMermaid: false
 
 # whether to use Operand to power semantic search
 # IMPORTANT: replace this API key with your own if you plan on using
@@ -75,14 +75,12 @@ description:
 
 # title of the home page (also for SEO)
 page_title:
-  "🪴 Quartz 3.3"
+  "ADSI Notes - Diogo Lopes"
 
 # links to show in the footer
 links:
-  - link_name: Twitter
-    link: https://twitter.com/_jzhao
   - link_name: Github
-    link: https://github.com/jackyzha0
+    link: https://github.com/diogorainhalopes
 ```
 
 ### Code Block Titles
