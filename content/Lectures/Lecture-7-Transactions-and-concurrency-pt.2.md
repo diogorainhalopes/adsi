@@ -4,7 +4,8 @@ enableToc: true
 ---
 [Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-06-transactions.pdf)
 
-# Tree Protocol
+# Locks and Time 
+## Tree Protocol
 
 - Only exclusive locks are considered.
 - The first lock may be on any data item.
@@ -22,7 +23,7 @@ Drawbacks
 - Transactions may have to lock data items that they do not access increased locking overhead, and additional waiting time potential decrease in concurrency
 
 
-## Granularity Hierarchy
+### Granularity Hierarchy
 ![](assets/lock_hier.png)
 The levels, starting from the coarsest (top) level can be
 - database, area, file, record 
@@ -31,7 +32,7 @@ etc.
 
 When a transaction locks a node in S or X mode, it implicitly locks all descendants in the same mode (S or X).
 
-## Intention Lock Modes
+### Intention Lock Modes
 - **intention shared (IS)**: indicates there are shared locks at lower levels of the tree
 - **intention exclusive (IX)**: indicates there are exclusive or shared locks at lowers level of the tree
 - **shared and intention exclusive (SIX)**: a shared lock, with the possibility of having exclusive or shared locks at lower levels of the tree.
@@ -45,7 +46,7 @@ When a transaction locks a node in S or X mode, it implicitly locks all descenda
 - If a node is locked in X mode, its descendants are implicitly locked in X mode.
 
 
-# Timestamp Based Protocols
+## Timestamp Based Protocols
 
 Each transaction Ti is issued a timestamp TS( Ti ) when it enters the system.
 - Each transaction has a unique timestamp
@@ -55,7 +56,7 @@ Timestamp based protocols manage concurrent execution such that
 	**timestamp order = serializability order**
 
 
-## Timestamp Ordering Protocol
+### Timestamp Ordering Protocol
 
 Maintains for each data Q two timestamp values:
 - W-timestamp( Q ) is the largest timestamp of any transaction that executed write( Q )
@@ -70,7 +71,7 @@ Imposes rules on read and write operations to ensure that
 ![](assets/valid_tso.png)
 ![](assets/TSO_example.png)
 
-### Multiversion Timestamp Ordering
+#### Multiversion Timestamp Ordering
 
 - Each data item Q has a sequence of versions < Q 1 , Q 2 ,...., Q m >
 - Each version Q k has its own timestamps:
@@ -85,7 +86,7 @@ Imposes rules on read and write operations to ensure that
 - Protocol guarantees serializability
 	- but does not ensure recoverability or cascadelessness
 
-# Snapshot Isolation
+## Snapshot Isolation
 - Widely used in practice (incl. Oracle, PostgreSQL, SQL Server, etc.)
 - Each transaction is given its own snapshot of the database
 - Transactions that update the database have potential conflicts

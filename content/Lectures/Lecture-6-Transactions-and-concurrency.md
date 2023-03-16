@@ -111,7 +111,7 @@ Can only commit T9 after T8
 	- Because if the read of Tj appears after the commit of Ti, then the commit of Tj will also appear after the commit of Ti
 - It is desirable to restrict the schedules to those that are  **cascadeless**
 
-# Levels of Consistency in SQL
+## Levels of Consistency in SQL
 - **Serializable** — ensures serializable execution.  
 - **Repeatable read** — only committed records to be read.  
 	- Repeated reads of same record must return same value.  
@@ -130,10 +130,10 @@ Some systems have additional isolation levels
 - When commiting a problem might arise as each transaction spanshot might be different
 - It allows no conflicts while inside the transaction, but problems in commit
 
-## Implementation of Isolation Levels
+### Implementation of Isolation Levels
 (Locking, Timestamps, Multiple versions of each data item)
 
-## Locking
+### Locking
 - Lock on entire database vs. lock on items  
 - How long to hold lock?  
 - Shared vs. exclusive locks
@@ -151,7 +151,7 @@ Bad Lock example:
 
 You should not release a lock inside a transaction
 
-### 2-Phase Locking
+#### 2-Phase Locking
 
 ![](assets/2P_lock.png)
 

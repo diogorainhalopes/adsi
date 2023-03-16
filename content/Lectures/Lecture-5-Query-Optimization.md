@@ -4,7 +4,8 @@ enableToc: true
 ---
 [Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-05-optimization.pdf)
 
-# Evaluating a given query
+# Query Optimization
+## Evaluating a given query
 
 ![](assets/rel_alg_1.png)
 
@@ -15,7 +16,7 @@ Query optimization is finding the optimal execution plan
 - Pushed down selection of rows from a) to b)
 - We can also push down selection of columns
 
-# Equivalence Rules
+## Equivalence Rules
 
 ![](assets/equiv_r.png)
 
@@ -28,7 +29,7 @@ the relation to be joined.
 Performing the projection as early as possible reduces the size of
 the relation to be joined.
 
-# Cost-Based Optimization
+## Cost-Based Optimization
 
 Now consider finding the best join order for: 
 (r 1 ⨝ r 2 ⨝ r 3 ⨝ r 4 ⨝ r 5)
@@ -37,22 +38,22 @@ Should we consider 12x12 joins orders?
 - No. Only 12+12. We choose the best order for r 1 ⨝ r 2 ⨝ r 3 and the best order for (...) ⨝ r 4 ⨝ r 5 independently.
 - When an optimization problem can be solved by optimizing sub problems independently, we can use dynamic programming
 
-# Heuristics in Optimization
+## Heuristics in Optimization
 - E.g. in left deep join trees, the right hand side input for each join is always a relation, not the result of an intermediate join.
 - Fewer join orders to consider.
 
 ![](assets/left_tree.png)
 
-## Concept of memoization
+### Concept of memoization
 - Store the best plan for a subexpression the first time it is optimized, and reuse it on repeated optimization calls on same subexpression
 
-## Implemented as plan caching
+### Implemented as plan caching
 - Reuse previously computed plan if query is resubmitted
 - Even with different constants in query
 - Applies to the exact same query
 
 
-# Materialized Views
+## Materialized Views
 - A materialized view is a view whose contents are computed and stored.
 ```sql
 create view my_students ID, name as
@@ -65,7 +66,7 @@ where student.ID = takes.ID
 - Materializing the above view would be very useful if the list of students is required frequently
 
 
-## Query Optimization and Materialized Views
+### Query Optimization and Materialized Views
 
 **Rewriting queries to use materialized views:**
 - A materialized view v r ⨝ s is available
@@ -83,7 +84,7 @@ The system knows which materialized views exist, so it can use them to optimize 
 
 Query optimizer should consider all above options and choose the best overall plan
 
-## Materialized View Creation
+### Materialized View Creation
 - Materialized view creation : "W hat is the best set of views to materialize?"
 - Index creation :"What is the best set of indices to
 	closely related, but simpler
@@ -92,7 +93,7 @@ Query optimizer should consider all above options and choose the best overall pl
 - One of the steps in database tuning (more on tuning in next lectures)
 - Commercial database systems provide tools (called " tuning assistants" or "wizards") to help the database administrator choose what indices and materialized views to create.
 
-# Statistical Information for Cost Estimation
+## Statistical Information for Cost Estimation
 
 Important for:
 - Can tell how many records to expect
