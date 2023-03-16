@@ -2,7 +2,7 @@
 title: Lab 01 - Introduction to SQL Server Management Studio
 enableToc: false
 ---
-# [[Lab01.pdf|Lab 01]]
+# [[guides/Lab01.pdf|Lab 01]]
 
 ```sql
 SET STATISTICS IO ON
@@ -18,4 +18,5 @@ Displays the number of milliseconds required to parse, compile, and execute each
 
 More info [here](https://learn.microsoft.com/en-us/sql/t-sql/statements/set-statistics-time-transact-sql?view=sql-server-ver16)
 
-## [[lab01_screenshot.png|Lab 01 Screenshot]]
+![Lab 01 Screenshot](assets/lab01_screenshot.png)
+

@@ -1,26 +1,10 @@
 ---
 title: Lecture 5 - Query Optimization
-enableToc: false
+enableToc: true
 ---
-[[adsi-05-optimization.pdf|Lecture 5 slides]]
-
-### Index
-
-- [[#Index|Index]]
-- [[#Evaluating a given query|Evaluating a given query]]
-- [[#Equivalence Rules|Equivalence Rules]]
-- [[#Cost-Based Optimization|Cost-Based Optimization]]
-- [[#Heuristics in Optimization|Heuristics in Optimization]]
-	- [[#Heuristics in Optimization#Concept of **memoization**|Concept of **memoization**]]
-	- [[#Heuristics in Optimization#Implemented as **plan caching**|Implemented as **plan caching**]]
-- [[#Materialized Views|Materialized Views]]
-- [[#Query Optimization and Materialized Views|Query Optimization and Materialized Views]]
-- [[#Materialized View Creation|Materialized View Creation]]
-- [[#Statistical Information for Cost Estimation|Statistical Information for Cost Estimation]]
-
-
+[[slides/adsi-05-optimization.pdf|Lecture 5 slides]]
 ### Evaluating a given query
-![[rel_alg_1.png]]
+![](assets/rel_alg_1.png)
 
 Query optimization is finding the optimal execution plan
 
@@ -30,7 +14,7 @@ Query optimization is finding the optimal execution plan
 - We can also push down selection of columns
 
 ### Equivalence Rules
-![[equiv_r.png]]
+![](assets/equiv_r.png)
 
 Associative Rules in Joins can be useful to maintain order or use some index
 
@@ -54,7 +38,7 @@ Should we consider 12x12 joins orders?
 - E.g. in left deep join trees, the right hand side input for each join is always a relation, not the result of an intermediate join.
 - Fewer join orders to consider.
 
-![[left_tree.png]]
+![](assets/left_tree.png)
 
 #### Concept of **memoization**
 - Store the best plan for a subexpression the first time it is optimized, and reuse it on repeated optimization calls on same subexpression
@@ -111,7 +95,7 @@ Important for:
 - Can tell how many records to expect
 - Can tell performance costs/time
 - Selection size estimation
-![[select_s_est.png]]
+![](assets/select_s_est.png)
 
 
 

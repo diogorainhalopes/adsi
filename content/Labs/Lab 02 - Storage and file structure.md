@@ -2,7 +2,7 @@
 title: Lab 02 - Storage and file structure
 enableToc: false
 ---
-# [[Lab02.pdf|Lab 02]]
+# [[guides/Lab02.pdf|Lab 02]]
 
 **.mdf files***
 Data files contain data and objects such as tables, indexes, stored procedures, and views.
@@ -292,4 +292,4 @@ DBCC PAGE('ExampleDB', 3, 16, 1);
 	- shows extents allocated to the object in the same aprtition as the IAM
 
 
-## [[lab02_screenshot.png|Lab 02 Screenshot]]
+## ![Lab 02 Screenshot](assets/lab02_screenshot.png)

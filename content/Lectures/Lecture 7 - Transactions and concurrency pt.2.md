@@ -1,29 +1,17 @@
 ---
 title: Lecture 7 - Transactions and concurrency pt.2
-enableToc: false
+enableToc: true
 ---
+[[slides/adsi-06-transactions.pdf/|Lecture 7 - slides]]
 
-[[adsi-06-transactions.pdf|Lecture 6 - slides]]
-
-### Index
-
-- [[#Index|Index]]
-- [[#Tree Protocol|Tree Protocol]]
-	- [[#Tree Protocol#Granularity Hierarchy|Granularity Hierarchy]]
-	- [[#Tree Protocol#Intention Lock Modes|Intention Lock Modes]]
-- [[#Timestamp Based Protocols|Timestamp Based Protocols]]
-	- [[#Timestamp Based Protocols#Timestamp Ordering Protocol|Timestamp Ordering Protocol]]
-		- [[#Timestamp Ordering Protocol#Multiversion Timestamp Ordering|Multiversion Timestamp Ordering]]
-- [[#Snapshot Isolation|Snapshot Isolation]]
-
-### Tree Protocol
+# Tree Protocol
 
 - Only exclusive locks are considered.
 - The first lock may be on any data item.
 - Subsequently, a data item can be locked only if its parent is currently locked by the same transaction.
 - Data items may be unlocked at any time.
 - A data item that has been locked and unlocked cannot be subsequently re locked by the same transaction.
-![[tree_lock.png]]
+![](assets/tree_lock.png)
 
 The tree protocol ensures conflict serializability as well as freedom from deadlock
 
@@ -33,8 +21,8 @@ Drawbacks
 - Transactions may have to lock data items that they do not access increased locking overhead, and additional waiting time potential decrease in concurrency
 
 
-#### Granularity Hierarchy
-![[lock_hier.png]]
+## Granularity Hierarchy
+! [.](lock_hier.png)
 The levels, starting from the coarsest (top) level can be
 - database, area, file, record 
 - database, table, page, row (as in SQL Server)
@@ -42,12 +30,12 @@ etc.
 
 When a transaction locks a node in S or X mode, it implicitly locks all descendants in the same mode (S or X).
 
-#### Intention Lock Modes
+## Intention Lock Modes
 - **intention shared (IS)**: indicates there are shared locks at lower levels of the tree
 - **intention exclusive (IX)**: indicates there are exclusive or shared locks at lowers level of the tree
 - **shared and intention exclusive (SIX)**: a shared lock, with the possibility of having exclusive or shared locks at lower levels of the tree.
 
-![[lock_matrix.png]]
+! [.](lock_matrix.png)
 - The root of the tree is locked first in some mode (IS, IX, S, SIX, X).
 - If a node is locked in IS mode, its descendants can be locked in IS or S mode.
 - If a node is locked in IX mode, its descendants can be locked in any mode.
@@ -56,7 +44,7 @@ When a transaction locks a node in S or X mode, it implicitly locks all descenda
 - If a node is locked in X mode, its descendants are implicitly locked in X mode.
 
 
-### Timestamp Based Protocols
+# Timestamp Based Protocols
 
 Each transaction Ti is issued a timestamp TS( Ti ) when it enters the system.
 - Each transaction has a unique timestamp
@@ -66,7 +54,7 @@ Timestamp based protocols manage concurrent execution such that
 	**timestamp order = serializability order**
 
 
-#### Timestamp Ordering Protocol
+## Timestamp Ordering Protocol
 
 Maintains for each data Q two timestamp values:
 - W-timestamp( Q ) is the largest timestamp of any transaction that executed write( Q )
@@ -76,20 +64,20 @@ Imposes rules on read and write operations to ensure that
 - Any conflicting operations are executed in timestamp order
 - Out of order operations cause transaction rollback
 
-![[tso_read.png]]
-![[tso_write.png]]
+![](assets/tso_read.png)
+![](assets/tso_write.png)
 
-![[valid_tso.png]]
-![[TSO_example.png]]
+![](assets/valid_tso.png)
+![](assets/TSO_example.png)
 
-##### Multiversion Timestamp Ordering
+### Multiversion Timestamp Ordering
 
 - Each data item Q has a sequence of versions < Q 1 , Q 2 ,...., Q m >
 - Each version Q k has its own timestamps:
 - W-timestamp( Qk ) timestamp of the transaction that created (wrote) version Qk
 - R-timestamp( Q( k ) largest timestamp of a transaction that successfully read version Qk
 
-![[MTO.png]]
+![](assets/MTO.png)
 Notes
 - Read requests never fail and never wait.
 - A write by Ti is rejected if some newer transaction Tj that should read Ti 's version, has read a version created by a transaction older than Ti
@@ -97,13 +85,13 @@ Notes
 	- but does not ensure recoverability or cascadelessness
 
 
-### Snapshot Isolation
+# Snapshot Isolation
 - Widely used in practice (incl. Oracle, PostgreSQL, SQL Server, etc.)
 - Each transaction is given its own snapshot of the database
 - Transactions that update the database have potential conflicts
 - Read requests never wait
 - Read only transactions never fail
-![[snap_iso.png]]
+![](assets/snap_iso.png)
 
 Snapshot isolation does **NOT** ensure serializability
 - Ti reads A and B , updates A based on B
@@ -113,5 +101,5 @@ Snapshot isolation does **NOT** ensure serializability
 - Schedule is not conflict serializable
 	Precedence graph has a cycle
 - This anomaly is called a ***write skew***
-![[write_skew.png]]
+![](assets/write_skew.png)
 

@@ -2,7 +2,7 @@
 title: Lab 03 - Indexing
 enableToc: false
 ---
-# [[Lab03.pdf|Lab 03]]
+# [[guides/Lab03.pdf|Lab 03]]
 
 ## Index Info
 ```sql

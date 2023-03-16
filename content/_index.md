@@ -1,11 +1,9 @@
 ---
-title: README
+title: ADSI Notes
 enableToc: false
 ---
 
-Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-thought) for free. Quartz features
-
-1. Extremely fast natural-language [[notes/search]]
+## Digital archive for ADSI
 
 ### Syllabus
 1. Storage Management. Relational data storage: Organization of Records in Files; Semi-structured data storage; Data replication and partitioning strategies; Main-memory databases; Graph Databases 
@@ -22,6 +20,6 @@ Host your second brain and [digital garden](https://jzhao.xyz/posts/networked-th
 - https://videoconf-colibri.zoom.us/j/85198133883?pwd=WEZraGFaVWdicTRza0pQYndGcWRsdz09
 
 ### Backlinks
-- [[Index Lab Notes]]
-- [[Lectures-Notes/Index-Lecture-Notes.md]]
+- [[Labs/Index-Lab-Notes]]
+- [[Lectures/Index-Lecture-Notes]]
 
