@@ -2,7 +2,7 @@
 title: Lecture 7 - Transactions and concurrency pt.2
 enableToc: true
 ---
-[[slides/adsi-06-transactions.pdf]]
+[Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-06-transactions.pdf)
 
 # Tree Protocol
 

@@ -2,7 +2,8 @@
 title: Lecture 5 - Query Optimization
 enableToc: true
 ---
-[[slides/adsi-05-optimization.pdf]]
+[Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-05-optimization.pdf)
+
 # Evaluating a given query
 
 ![](assets/rel_alg_1.png)
@@ -42,10 +43,10 @@ Should we consider 12x12 joins orders?
 
 ![](assets/left_tree.png)
 
-## Concept of **memoization**
+## Concept of memoization
 - Store the best plan for a subexpression the first time it is optimized, and reuse it on repeated optimization calls on same subexpression
 
-## Implemented as **plan caching**
+## Implemented as plan caching
 - Reuse previously computed plan if query is resubmitted
 - Even with different constants in query
 - Applies to the exact same query
@@ -99,7 +100,6 @@ Important for:
 - Selection size estimation
 
 ![](assets/select_s_est.png)
-
 
 [[Lectures/Lecture-4-Query-Processing]] |  [[Lectures/Lecture-6-Transactions-and-concurrency]]
 
