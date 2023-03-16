@@ -1,6 +1,6 @@
 name: Diogo Lopes
 enableToc: true
-openToc: false
+openToc: true
 enableLinkPreview: true
 enableLatex: true
 enableCodeBlockTitle: true
@@ -10,7 +10,7 @@ enableSPA: true
 enableFooter: true
 enableContextualBacklinks: true
 enableRecentNotes: false
-enableGitHubEdit: true
+enableGitHubEdit: false
 enableMermaid: false
 GitHubLink: https://github.com/diogorainhalopes
 search:

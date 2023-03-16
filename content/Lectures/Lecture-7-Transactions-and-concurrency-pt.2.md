@@ -2,8 +2,7 @@
 title: Lecture 7 - Transactions and concurrency pt.2
 enableToc: true
 ---
-[[slides/adsi-06-transactions.pdf/|Lecture 7 - slides]]
-
+[[slides/adsi-06-transactions.pdf|Lecture 7 - slides]]
 # Tree Protocol
 
 - Only exclusive locks are considered.
@@ -105,3 +104,5 @@ Snapshot isolation does **NOT** ensure serializability
 
 ![](assets/write_skew.png)
 
+
+[[Lectures/Lecture-6-Transactions-and-concurrency]]   

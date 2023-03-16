@@ -212,3 +212,5 @@ When you can fit in-memory, it becomes better to store in column to perform oper
 
 In this course we are dealing with data that does not fit in-memory...
 
+
+[[Lectures/Lecture-3-Indexing]]

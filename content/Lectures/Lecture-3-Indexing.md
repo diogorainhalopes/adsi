@@ -276,3 +276,6 @@ Do an AND operation and we get the last record
 same for other operations
 - usually we dont create the bitmaps (the dbms does it for certain queries as an optimization, you can see it in "Execution Plan")
 - easy to build, then is thrown away
+
+
+[[Lectures/Lecture-2-Storage-and-file-organization]] | [[Lectures/Lecture-4-Query-Processing]]

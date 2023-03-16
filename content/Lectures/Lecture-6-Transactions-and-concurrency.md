@@ -176,3 +176,4 @@ Does not PREVENT **DEADLOCKS**
 - Concurrency control manager can be designed to prevent starvation.
 
 
+[[Lectures/Lecture-5-Query-Optimization]] |  [[Lectures/Lecture-7-Transactions-and-concurrency-pt.2]]

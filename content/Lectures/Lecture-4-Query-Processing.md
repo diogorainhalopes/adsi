@@ -122,7 +122,7 @@ Usually we cant bring the whole data into memory to sort it
 Allows us to create files larger than out memory
 Each step has I/O operations. And the number of steps decreases logarithmically with a factor of 2
 
-### **Cost analysis**:
+### **Cost analysis**
 
 The number of blocks in relation r is: b
 Initial runs I/O: 2b_r block transfers
@@ -236,3 +236,4 @@ consumed
 - ex: SORTING is a Blocking Operations as we need to save intermediate results (Materialization)
 
 
+[[Lectures/Lecture-3-Indexing]] |  [[Lectures/Lecture-5-Query-Optimization]]

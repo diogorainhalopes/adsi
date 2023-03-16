@@ -20,7 +20,7 @@ name: Diogo Lopes
 enableToc: true
 
 # whether to by-default open or close the table of contents on each page
-openToc: false
+openToc: true
 
 # whether to display on-hover link preview cards
 enableLinkPreview: true
@@ -50,11 +50,11 @@ enableFooter: true
 enableContextualBacklinks: true
 
 # whether to show a section of recent notes on the home page
-enableRecentNotes: false
+enableRecentNotes: true
 
 # whether to display an 'edit' button next to the last edited field
 # that links to github
-enableGitHubEdit: true
+enableGitHubEdit: false
 GitHubLink: https://github.com/jackyzha0/quartz/tree/hugo/content
 
 # whether to render mermaid diagrams
