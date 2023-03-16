@@ -2,7 +2,7 @@
 title: Lecture 2 - Storage and file organization
 enableToc: true
 ---
-[[slides/adsi-02-storage.pdf| Lecture 2 slides]]
+[[slides/adsi-02-storage.pdf]]
 # Physical Storage Systems vs Logical Storage Systems
 
 Files and bytes vs in-memory Tables

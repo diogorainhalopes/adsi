@@ -2,7 +2,7 @@
 title: Lecture 5 - Query Optimization
 enableToc: true
 ---
-[[slides/adsi-05-optimization.pdf|Lecture 5 slides]]
+[[slides/adsi-05-optimization.pdf]]
 # Evaluating a given query
 
 ![](assets/rel_alg_1.png)

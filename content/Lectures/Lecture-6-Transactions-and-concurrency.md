@@ -2,7 +2,7 @@
 title: Lecture 6 - Transactions and concurrency
 enableToc: true
 ---
-[[slides/adsi-06-transactions.pdf|Lecture 6 - slides]]
+[[slides/adsi-06-transactions.pdf]]
 # "We want performance"
 
 ## Transaction Concept

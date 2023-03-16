@@ -2,7 +2,7 @@
 title: Lecture 4 - Query Processing
 enableToc: true
 ---
-[[slides/adsi-04-processing.pdf|Lecture 4 slides]]
+[[slides/adsi-04-processing.pdf]]
 
 # Basic Steps in Query Processing
 
