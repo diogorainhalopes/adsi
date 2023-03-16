@@ -17,7 +17,6 @@ enableToc: false
 ### Links
 - https://fenix.tecnico.ulisboa.pt/disciplinas/AOBD/2022-2023/2-semestre/pagina-inicial
 - http://groups.tecnico.ulisboa.pt/adsi-meic/
-- https://videoconf-colibri.zoom.us/j/85198133883?pwd=WEZraGFaVWdicTRza0pQYndGcWRsdz09
 
 ### Backlinks
 - [[Labs/Index-Lab-Notes]]

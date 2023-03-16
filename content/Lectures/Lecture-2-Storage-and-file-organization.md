@@ -20,6 +20,7 @@ Need to bring the data to volatile storage in order to perform queries
 - **Tertiary**: Optical Storage, Magnetic Tape ("off-line storage" and used for archival)
 
 ![](/assets/storage-hierarchy.png)
+
 _Performance vs Storage_ 
 
 Main storages talked about in the course: RAM and Magnetic Disk
@@ -72,10 +73,12 @@ Each Disk lasts 1M hours -> 1000 Disks -> first fail on average in 1000 hours
 - **RAID Level 0**: Block striping; non-redundant.
 	
 ![](/assets/RAID_0.png)
+
 - **RAID Level 1**: Mirrored disks with block striping
 	Not the best, 2x space and 2x write
 	
 ![](/assets/RAID_1.png)
+
 - **RAID Level 5**: Block-Interleaved Distributed Parity
 	1 XOR 1 = 0 | 1 XOR 0 = 1
 	if you lose your data
@@ -111,6 +114,7 @@ Record access is simple but records may cross blocks
 	Modification: do not allow records to cross block boundaries
 
 ![](/assets/records.png)
+
 #### Deleting
 Deletion of record i: 
 1. move records ***i + 1, . . ., n*** to ***i, . . . , n – 1*** 
@@ -152,6 +156,7 @@ Null values represented by null-value bitmap
 ## Multitable Clustering File Organization
 On disk, multiple logical tables are stored in the same physical table
 In the course were going to utilize the oposite, one logical table to multiple physical tables (Table Partitioning)
+
 ![](/assets/MCFO.png)
 
 ## Table Partitioning
@@ -187,6 +192,7 @@ If you want to read from disk, you need to bring to memory and read it from ther
 ## Column-Oriented Storage
 
 ![](/assets/col_oriented_storage.png)
+
 **Benefits**:
 - Reduced IO if only some attributes are accessed 
 - Improved CPU cache performance 
@@ -205,3 +211,4 @@ When you can fit in-memory, it becomes better to store in column to perform oper
 (Vector processing, Parallel, special CPU ops...)
 
 In this course we are dealing with data that does not fit in-memory...
+

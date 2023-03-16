@@ -27,6 +27,7 @@ Even without a pointer to some record, we can assume some "categories" are in be
 
 ### Sparse Index
 - Contains index records for only some search-key values
+
 ![](/assets/sparse_index.png)
 
 ### Dense vs Sparse
@@ -50,7 +51,9 @@ Sparse compared to Dense Indexes:
 4) Indexes at all levels must be updated on insertion or deletion from the file
 
 ## Clustered Index
+
 ![](assets/clustered_indx.png)
+
 - In a sequentially ordered file, the index whose search key specifies the sequential order of the file
 - Clustered Indexes **sort and store the data rows in the table or view based on their key values**. 
 - These are the columns included in the index definition. 
@@ -61,7 +64,9 @@ All records regarding to a column are sequencial, so its faster to retrieve them
 If you have a pointer pointing to the first record in a table we only need that one, because the other ones follow it.
 
 ## Non-Clustered Index
+
 ![](assets/non_clustered_indx.png)
+
 - There can be multiple non-clustered indexes on a table.
 - Index record points to a bucket that contains pointers to all the actual records with that particular search-key value
 - Different order from the data
@@ -73,12 +78,14 @@ The pointer from an index row in a nonclustered index to a data row is called a 
 
 
 ## B<sup>+</sup> -Tree
+
 ![](assets/B+_tree.png)
 
 ### Searching for "Katz"
 1) Decide if Katz comes before/after Mozart -> follows pointer to the left (K<M)
 2) Theres no Katz here (sparse index) -> follow pointer to the right (K>E && K<G)
 3) This is a dense index: If value is there -> follow pointer
+
 ![](assets/B+_tree_search_katz.png)
 
 ### Properties
@@ -103,6 +110,7 @@ But Adams doesnt fit in the node
 - 2 values in the first node and the other 2 in the other node
 - We have space in the 2nd last level, we change the pointers by pushing them to the right
 - To chose the new pointer values we assess the values in the leaf nodes (Califeri < Adams; Califeri < Brandt)
+
 ![](assets/B+_tree_insert_admas.png)
 
 **Inserting Lamport**:
@@ -119,16 +127,23 @@ Left has to have values  <
 Right has to have values >=
 
 The root value has to be the smallest value in the leaf section
+
 ![](assets/B+_tree_insert_lmp.png)
 
 ### Deleting Entries
 **Merging and Redistribution**
 Removing a Leaf, Srinivasan:
+
 ![](assets/B+_tree_delete_leaf.png)
+
 Removing 2 non-Leaves Singh and Wu:
+
 ![](assets/B+_tree_delete_2_non_leaf.png)
+
 Removing a root, Gold:
+
 ![](assets/B+_tree_delete_root.png)
+
 1) Check where Gold is (at Root -> Less than Kim -> found leaf)
 2) No need for this many nodes -> Merge Nodes
 3) Causes the existing os a single Pointer -> Go get a new pointer (Left)
@@ -144,9 +159,12 @@ Removing a root, Gold:
 - You read the same number of blocks everytime an index is used. The search time is constant (B<sup>+</sup>-Tree); in a dense index you read 1->N
 
 ## Hash File organization
+
 ![](assets/hash_file_org.png)
 
+
 ## Hash Indexes
+
 ![](assets/hash_indx.png)
 
 - In a hash index, buckets store entries with pointers to records  

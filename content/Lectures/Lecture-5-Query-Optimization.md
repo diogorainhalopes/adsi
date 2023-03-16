@@ -4,6 +4,7 @@ enableToc: true
 ---
 [[slides/adsi-05-optimization.pdf|Lecture 5 slides]]
 ### Evaluating a given query
+
 ![](assets/rel_alg_1.png)
 
 Query optimization is finding the optimal execution plan
@@ -14,6 +15,7 @@ Query optimization is finding the optimal execution plan
 - We can also push down selection of columns
 
 ### Equivalence Rules
+
 ![](assets/equiv_r.png)
 
 Associative Rules in Joins can be useful to maintain order or use some index
@@ -95,6 +97,7 @@ Important for:
 - Can tell how many records to expect
 - Can tell performance costs/time
 - Selection size estimation
+
 ![](assets/select_s_est.png)
 
 

@@ -1,6 +1,6 @@
 ---
 title: Lecture 6 - Transactions and concurrency
-enableToc: false
+enableToc: true
 ---
 [[slides/adsi-06-transactions.pdf|Lecture 6 - slides]]
 # "We want performance"
@@ -16,7 +16,9 @@ enableToc: false
 - Failures of various kinds, such as hardware failures and system crashes
 
 Focus on **READ** and **WRITE**
+
 ![](assets/transac.png)
+
 If fails in the middle -> **ROLLBACK**
 
 ## ACID
@@ -27,7 +29,9 @@ If fails in the middle -> **ROLLBACK**
 - ***Durability***. After a transaction completes successfully, the changes it has made to the database persist, even if there are system failures.
 
 ## Transaction State
+
 ![](assets/transac_state.png)
+
 - ***Active*** – the initial state; the transaction stays in this state while it is executing  
 - ***Partially committed*** – after the final statement has been executed. (Higher concurrency causes more of this state)
 - ***Failed*** – after the discovery that normal execution can no longer proceed.  
@@ -47,14 +51,15 @@ transactions are executed
 **Serial Mode**: One transaction at the time (1 after the other)
 Schedule 1 is T1 and T2 in Serial Mode
 This one is Schedule 3 
+
 ![](assets/serail_sched.png)
+
 We can switch the order of blocks if they operate in diff objs
 
 **Basic Assumption** – Each transaction preserves database  
 consistency.
 We focus on a particular form of schedule equivalence called  
 ***conflict serializability***
-
 
 ## Conflicting Instructions
 1. Ti : read(Q)    Tj : read(Q)     **No conflict**  
@@ -72,25 +77,31 @@ of swaps of non-conflicting instructions, we say that S and S' are
 ### Conflict serializable
 We say that a schedule S is **conflict serializable** if it is conflict  
 equivalent to a serial schedule.
+
 ![](assets/conf_serl.png)
 ![](assets/non_conf_srl.png)
+
 (Does not follow the "Precedence Graph")
 We are unable to swap instructions in the above schedule to obtain either  
 the serial schedule < T3 , T4 >, or the serial schedule < T4 , T3 >.
-![](assets/serl_test.png)
 
+![](assets/serl_test.png)
 
 ## Recoverable Schedules
 - If transaction Tj reads a data item previously written by a transaction Ti , then the commit of Tj must appear after the commit of Ti  
 - The following schedule is not recoverable:
+
 ![](assets/unrec.png)
+
 - If T8 rolls back, T9 has read an inconsistent database state.  
 - Database must ensure that schedules are recoverable.
 Can only commit T9 after T8
 
 ## Cascading rollback
 - A single transaction failure leads to a series of transaction rollbacks.
+
 ![](assets/casc_sch.png)
+
 (the schedule is recoverable)
 
 ## Cascadeless schedules
@@ -108,7 +119,6 @@ Can only commit T9 after T8
 	- Successive reads of a record may return different (committed) values.  
 - **Read uncommitted** — even uncommitted records may be read.
 
-
 ![](assets/const.png)
 **Analysis Queries** can benefit for "Read Uncommited" as it is the fastest (and full parallel)
 
@@ -118,7 +128,6 @@ Some systems have additional isolation levels
 - Snapshot isolation (not part of the SQL standard) each transaction works on its own snapshot of the data. 
 - When commiting a problem might arise as each transaction spanshot might be different
 - It allows no conflicts while inside the transaction, but problems in commit
-
 
 ## Implementation of Isolation Levels
 (Locking, Timestamps, Multiple versions of each data item)
@@ -132,14 +141,19 @@ Some systems have additional isolation levels
 written. X-lock is requested using lock-X instruction.  
 2. **Shared (S) mode**. Data item can only be read. S-lock is  
 requested using lock-S instruction.
+
 ![](assets/lock_comp.png)
 
 Bad Lock example:
+
 ![](assets/bad_lock.png)
+
 You should not release a lock inside a transaction
 
 ### 2-Phase Locking
+
 ![](assets/2P_lock.png)
+
 A protocol which ensures conflict-serializable schedules  
 - Phase 1: Growing Phase  
 	- Transaction may obtain locks  
@@ -151,7 +165,9 @@ A protocol which ensures conflict-serializable schedules
 	- It can be proved that the transactions can be serialized in the order of  their lock points
 
 Does not PREVENT **DEADLOCKS**
+
 ![](assets/DEADL.png)
+
 - The problem is that the transactions are locking in reverse order (B, A and A, B)
 - The potential for deadlock exists in most locking protocols.  
 - **Starvation** is also possible if concurrency control manager is badly designed. For example:  

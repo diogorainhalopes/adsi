@@ -11,6 +11,7 @@ enableToc: true
 - Subsequently, a data item can be locked only if its parent is currently locked by the same transaction.
 - Data items may be unlocked at any time.
 - A data item that has been locked and unlocked cannot be subsequently re locked by the same transaction.
+
 ![](assets/tree_lock.png)
 
 The tree protocol ensures conflict serializability as well as freedom from deadlock
@@ -22,7 +23,7 @@ Drawbacks
 
 
 ## Granularity Hierarchy
-! [.](lock_hier.png)
+![](assets/lock_hier.png)
 The levels, starting from the coarsest (top) level can be
 - database, area, file, record 
 - database, table, page, row (as in SQL Server)
@@ -35,7 +36,7 @@ When a transaction locks a node in S or X mode, it implicitly locks all descenda
 - **intention exclusive (IX)**: indicates there are exclusive or shared locks at lowers level of the tree
 - **shared and intention exclusive (SIX)**: a shared lock, with the possibility of having exclusive or shared locks at lower levels of the tree.
 
-! [.](lock_matrix.png)
+![](assets/lock_matrix.png)
 - The root of the tree is locked first in some mode (IS, IX, S, SIX, X).
 - If a node is locked in IS mode, its descendants can be locked in IS or S mode.
 - If a node is locked in IX mode, its descendants can be locked in any mode.
@@ -66,7 +67,6 @@ Imposes rules on read and write operations to ensure that
 
 ![](assets/tso_read.png)
 ![](assets/tso_write.png)
-
 ![](assets/valid_tso.png)
 ![](assets/TSO_example.png)
 
@@ -78,12 +78,12 @@ Imposes rules on read and write operations to ensure that
 - R-timestamp( Q( k ) largest timestamp of a transaction that successfully read version Qk
 
 ![](assets/MTO.png)
-Notes
+
+**Notes**
 - Read requests never fail and never wait.
 - A write by Ti is rejected if some newer transaction Tj that should read Ti 's version, has read a version created by a transaction older than Ti
 - Protocol guarantees serializability
 	- but does not ensure recoverability or cascadelessness
-
 
 # Snapshot Isolation
 - Widely used in practice (incl. Oracle, PostgreSQL, SQL Server, etc.)
@@ -91,6 +91,7 @@ Notes
 - Transactions that update the database have potential conflicts
 - Read requests never wait
 - Read only transactions never fail
+
 ![](assets/snap_iso.png)
 
 Snapshot isolation does **NOT** ensure serializability
@@ -101,5 +102,6 @@ Snapshot isolation does **NOT** ensure serializability
 - Schedule is not conflict serializable
 	Precedence graph has a cycle
 - This anomaly is called a ***write skew***
+
 ![](assets/write_skew.png)
 

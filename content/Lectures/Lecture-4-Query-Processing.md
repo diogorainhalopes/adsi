@@ -53,7 +53,9 @@ It does not matter if an index is clustered or not if you only have to retrieve 
 
 ## Selection Involving Comparisons
 Can implement selections in relational algebra. like > or <, by using linear scans or indices:
+
 ![](assets/compar.png)
+
 ### A5 (clustered index, comparison) 
 Retrieve multiple records.
 - For the first comparison use index to find first tuple >= V and then scan sequentially
@@ -74,13 +76,12 @@ Retrieve multiple records.
 ![](assets/conjunc.png)
 
 ### A7 (conjunctive selection using one index).  
-Select a combination of i and algorithms A1 through A7 that results in the  
-least cost for i (r)  
+Select a combination of selection of columns and algorithms A1 through A7 that results in the  
+least cost.
 Test other conditions on tuple after fetching it into memory
  
 ### A8 (conjunctive selection using composite index).  
 - Use appropriate composite (multiple-key) index if available.  
-
 
 ### A9 (conjunctive selection by intersection of identifiers).  
 Requires indices with record pointers.  
@@ -88,6 +89,7 @@ Use corresponding index for each condition, and take intersection of all the obt
 Then fetch records from file. If some conditions do not have appropriate indices, apply test in memory
 
 ![](assets/disj.png)
+
 ### A10 (disjunctive selection by union of identifiers).  
 Applicable if all conditions have available indices.  
 - Otherwise use linear scan.  
@@ -96,6 +98,7 @@ Use corresponding index for each condition, and take union of all the obtained s
 Then fetch records from file.
 
 ![](assets/neg.png)
+
 - Use linear scan on file  
 - Or transform the negation O into expression without negation O', and check if an index is applicable to O'  
 	Find satisfying records using index and fetch from file
@@ -106,6 +109,7 @@ Then fetch records from file.
 Usually we cant bring the whole data into memory to sort it
 
 ## External Sort-Merge
+
 ![](assets/merge-sort.png)
 
 ### Steps
@@ -127,6 +131,7 @@ Each merge pass decreases the number of runs by a factor of M-1
 The total number of merge passes is: [ log_M–1 (b_r /M) ]
 Each merge pass reads and writes every block: 2br block transfers
 For the final pass we don't count the write cost: -b
+
 ![](assets/ext_merg_cost.png)
 
 ### Cost of seeks:
@@ -134,8 +139,8 @@ in the example: 1 seek = 1 block -> 3 records
 During run generation: one seek to read each run and one seek to write each run : 2[b_r /M ]
 During the merge phase: Need 2b_r seeks for each merge pass 
 	(Except the final one which does not require a write)
+	
 ![](assets/ext_merg_seek.png)
-
 
 ## Join Operations
 - Several different algorithms to implement joins  
@@ -221,12 +226,12 @@ consumed
 - Key idea: blocking operations often have two suboperations  
 	– e.g., for sorting: run generation and merge  
 - Treat them as separate operations
+
 ![](assets/blocking_ops.png)
 
 **Pipelining**: as we generate results, we send them to the next stage
 
 **Materialization**: we compute the resuts and store them on disk, then read and compute more... (saving in between)
-
 - ex: COUNT operation can be sent as calculated (Pipeline)
 - ex: SORTING is a Blocking Operations as we need to save intermediate results (Materialization)
 
