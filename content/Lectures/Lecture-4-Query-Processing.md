@@ -3,8 +3,8 @@ title: Lecture 4 - Query Processing
 enableToc: true
 ---
 [Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-04-processing.pdf)
-
-# Basic Steps in Query Processing
+# Query Processing
+## Basic Steps in Query Processing
 
 1) **Parsing and translation** – Translate the query into its internal form. This is then translated into relational algebra. – Parser checks syntax, verifies relations. 
 2) **Optimization** – Construct an execution plan that minimizes the cost of query evaluation.
@@ -236,4 +236,4 @@ consumed
 - ex: SORTING is a Blocking Operations as we need to save intermediate results (Materialization)
 
 
-[[Lectures/Lecture-3-Indexing]] |  [[Lectures/Lecture-5-Query-Optimization]]
+[Lecture 3 Indexing](Lectures/Lecture-3-Indexing.md) |  [Lecture 5 Query Optimization](Lectures/Lecture-5-Query-Optimization.md)

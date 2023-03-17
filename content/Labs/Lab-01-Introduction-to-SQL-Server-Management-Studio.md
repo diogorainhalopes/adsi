@@ -2,7 +2,7 @@
 title: Lab 01 - Introduction to SQL Server Management Studio
 enableToc: false
 ---
-# [[guides/Lab01.pdf|Lab 01]]
+[Lab01](https://diogorainhalopes.github.io/quartz/guides/Lab01.pdf)
 
 ```sql
 SET STATISTICS IO ON

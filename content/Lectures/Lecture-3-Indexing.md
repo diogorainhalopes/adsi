@@ -3,8 +3,8 @@ title: Lecture 3 - Indexing
 enableToc: true
 ---
 [Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-03-indexing.pdf)
-
-# "Indexes will be our friends"
+# Indexes
+## "Indexes will be our friends"
 
 Main Indexes:
 - B<sup>+</sup> - Tree
@@ -279,4 +279,4 @@ same for other operations
 - easy to build, then is thrown away
 
 
-[[Lectures/Lecture-2-Storage-and-file-organization]] | [[Lectures/Lecture-4-Query-Processing]]
+[Lecture 2 Storage and file organization](Lectures/Lecture-2-Storage-and-file-organization.md) | [Lecture 4 Query Processing](Lectures/Lecture-4-Query-Processing.md)

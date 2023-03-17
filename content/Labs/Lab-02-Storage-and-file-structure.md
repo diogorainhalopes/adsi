@@ -2,7 +2,7 @@
 title: Lab 02 - Storage and file structure
 enableToc: false
 ---
-# [[guides/Lab02.pdf|Lab 02]]
+[Lab02](https://diogorainhalopes.github.io/quartz/guides/Lab02.pdf)
 
 **.mdf files***
 Data files contain data and objects such as tables, indexes, stored procedures, and views.

@@ -102,5 +102,5 @@ Important for:
 
 ![](assets/select_s_est.png)
 
-[[Lectures/Lecture-4-Query-Processing]] |  [[Lectures/Lecture-6-Transactions-and-concurrency]]
+[Lecture 4 Query Processing](Lectures/Lecture-4-Query-Processing.md) |  [Lecture 6 Transactions and concurrency](Lectures/Lecture-6-Transactions-and-concurrency.md)
 

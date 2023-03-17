@@ -5,7 +5,6 @@ enableToc: true
 [Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-06-transactions.pdf)
 
 # "We want performance"
-
 ## Transaction Concept
 - Unit of a program.
 - Group of ops that are executed as a whole
@@ -177,4 +176,4 @@ Does not PREVENT **DEADLOCKS**
 - Concurrency control manager can be designed to prevent starvation.
 
 
-[[Lectures/Lecture-5-Query-Optimization]] |  [[Lectures/Lecture-7-Transactions-and-concurrency-pt.2]]
+[Lecture 5 Query Optimization](Lectures/Lecture-5-Query-Optimization.md) |  [Lecture 7 Transactions and concurrency pt2](Lectures/Lecture-7-Transactions-and-concurrency-pt2.md)

@@ -3,7 +3,15 @@ title: ADSI Notes
 enableToc: false
 ---
 
-## Digital archive for ADSI
+## Digital archive for ADSI 🗃️
+
+### Indexes
+- [Index Lab Notes](Labs/Index-Lab-Notes)
+- [Index Lecture Notes](Lectures/Index-Lecture-Notes)
+
+### Links
+- https://fenix.tecnico.ulisboa.pt/disciplinas/AOBD/2022-2023/2-semestre/pagina-inicial
+- http://groups.tecnico.ulisboa.pt/adsi-meic/
 
 ### Syllabus
 1. Storage Management. Relational data storage: Organization of Records in Files; Semi-structured data storage; Data replication and partitioning strategies; Main-memory databases; Graph Databases 
@@ -14,11 +22,8 @@ enableToc: false
 6. Data-intensive systems implementation. Database as a Service. Examples of cloud database services and systems. 
 7. Streaming databases
 
-### Links
-- https://fenix.tecnico.ulisboa.pt/disciplinas/AOBD/2022-2023/2-semestre/pagina-inicial
-- http://groups.tecnico.ulisboa.pt/adsi-meic/
+### Books
+[Database System Concepts 7th Edition](https://github.com/Sorosliu1029/Database-Systems/blob/master/Database-System-Concepts-7th-Edition.pdf)
 
-### Backlinks
-- [[Labs/Index-Lab-Notes]]
-- [[Lectures/Index-Lecture-Notes]]
+[Ramakrishnan - Database Management Systems 3rd Edition](https://github.com/pforpallav/school/blob/master/CPSC404/Ramakrishnan%20-%20Database%20Management%20Systems%203rd%20Edition.pdf)
 

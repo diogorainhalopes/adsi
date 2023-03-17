@@ -3,8 +3,8 @@ title: Lecture 2 - Storage and file organization
 enableToc: true
 ---
 [Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-02-storage.pdf)
-
-# Physical Storage Systems vs Logical Storage Systems
+# Storage and file organization
+## Physical Storage Systems vs Logical Storage Systems
 
 Files and bytes vs in-memory Tables
 
@@ -214,4 +214,4 @@ When you can fit in-memory, it becomes better to store in column to perform oper
 In this course we are dealing with data that does not fit in-memory...
 
 
-[[Lectures/Lecture-3-Indexing]]
+[Lecture 3 Indexing](Lectures/Lecture-3-Indexing.md)

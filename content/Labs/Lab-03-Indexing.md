@@ -2,7 +2,7 @@
 title: Lab 03 - Indexing
 enableToc: false
 ---
-# [[guides/Lab03.pdf|Lab 03]]
+[Lab03](https://diogorainhalopes.github.io/quartz/guides/Lab03.pdf)
 
 ## Index Info
 ```sql
