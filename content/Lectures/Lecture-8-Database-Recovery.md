@@ -148,7 +148,7 @@ ARIES uses a log-based approach to recover from failures. It maintains a write-a
 - The < Ti abort > event **does not** indicate when a transaction has been completely undone (this is indicated by < Ti end >)
 - < Ti abort > indicates when a transaction error occurred
 
-The distinction between **end** and **commit** is unclear (couldn't get a clear answear from Chat-GPT)
+The distinction between **end** and **commit** is unclear (couldn't get a clear answer from Chat-GPT)
 
 
 ![[assets/ARIES_ex1.png]]
