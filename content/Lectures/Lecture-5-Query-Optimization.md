@@ -2,7 +2,7 @@
 title: Lecture 5 - Query Optimization
 enableToc: true
 ---
-[Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-05-optimization.pdf)
+[Slides](https://diogorainhalopes.github.io/adsi/slides/adsi-05-optimization.pdf)
 
 # Query Optimization
 ## Evaluating a given query

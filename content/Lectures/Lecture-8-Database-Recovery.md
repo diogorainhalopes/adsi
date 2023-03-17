@@ -2,7 +2,7 @@
 title: Lecture 8 - Database Recovery
 enableToc: true
 ---
-[Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-07-recovery.pdf)
+[Slides](https://diogorainhalopes.github.io/adsi/slides/adsi-07-recovery.pdf)
 
 # Database Crash and Recovery System
 ## Failure Classification

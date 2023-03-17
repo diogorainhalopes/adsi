@@ -2,7 +2,7 @@
 title: Lecture 4 - Query Processing
 enableToc: true
 ---
-[Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-04-processing.pdf)
+[Slides](https://diogorainhalopes.github.io/adsi/slides/adsi-04-processing.pdf)
 # Query Processing
 ## Basic Steps in Query Processing
 

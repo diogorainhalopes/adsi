@@ -2,7 +2,7 @@
 title: Lecture 2 - Storage and file organization
 enableToc: true
 ---
-[Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-02-storage.pdf)
+[Slides](https://diogorainhalopes.github.io/adsi/slides/adsi-02-storage.pdf)
 # Storage and file organization
 ## Physical Storage Systems vs Logical Storage Systems
 

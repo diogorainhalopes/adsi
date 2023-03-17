@@ -2,7 +2,7 @@
 title: Lecture 6 - Transactions and concurrency
 enableToc: true
 ---
-[Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-06-transactions.pdf)
+[Slides](https://diogorainhalopes.github.io/adsi/slides/adsi-06-transactions.pdf)
 
 # "We want performance"
 ## Transaction Concept

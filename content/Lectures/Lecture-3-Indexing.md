@@ -2,7 +2,7 @@
 title: Lecture 3 - Indexing
 enableToc: true
 ---
-[Slides](https://diogorainhalopes.github.io/quartz/slides/adsi-03-indexing.pdf)
+[Slides](https://diogorainhalopes.github.io/adsi/slides/adsi-03-indexing.pdf)
 # Indexes
 ## "Indexes will be our friends"
 
