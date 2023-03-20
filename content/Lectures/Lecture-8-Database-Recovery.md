@@ -151,8 +151,8 @@ ARIES uses a log-based approach to recover from failures. It maintains a write-a
 The distinction between **end** and **commit** is unclear (couldn't get a clear answer from Chat-GPT)
 
 
-![[assets/ARIES_ex1.png]]
+![](assets/ARIES_ex1.png)
 
 
 
-[Lecture 7 Transactions and concurrency pt2](Lectures/Lecture-7-Transactions-and-concurrency-pt2.md) | 
+[Lecture 7 Transactions and concurrency pt2](Lectures/Lecture-7-Transactions-and-concurrency-pt2.md) | [Lecture 9 Tuning](Lectures/Lecture-9-Database-Tuning.md)
