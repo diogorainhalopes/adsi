@@ -327,4 +327,4 @@ The query below will be slower because of the expansion of the view (also price 
 ![](assets/QUERY_REW.png)
 
 
-[Lecture 8 Database Recovery](Lectures/Lecture-8-Database-Recovery.md) | 
+[Lecture 8 Database Recovery](Lectures/Lecture-8-Database-Recovery.md) |  [Lecture 10 Tuning (continued)](Lectures/Lecture-10-Database-Tuning-(continued).md)

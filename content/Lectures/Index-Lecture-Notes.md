@@ -10,3 +10,4 @@ enableToc: false
 - [Lecture 7 Transactions and concurrency pt2](Lectures/Lecture-7-Transactions-and-concurrency-pt2.md)
 - [Lecture 8 Database Recovery](Lectures/Lecture-8-Database-Recovery.md)
 - [Lecture 9 Database Tuning](Lectures/Lecture-9-Database-Tuning.md)
+- [Lecture 10 Database Tuning (continued)](Lectures/Lecture-10-Database-Tuning-(continued).md)
