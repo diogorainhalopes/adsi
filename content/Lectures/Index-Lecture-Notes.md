@@ -11,3 +11,4 @@ enableToc: false
 - [Lecture 8 Database Recovery](Lectures/Lecture-8-Database-Recovery.md)
 - [Lecture 9 Database Tuning](Lectures/Lecture-9-Database-Tuning.md)
 - [Lecture 10 Database Tuning (continued)](Lectures/Lecture-10-Database-Tuning-(continued).md)
+- [Lecture 11 Database Tuning (conclusion)](Lectures/Lecture-11-Database-Tuning-(conclusion).md)

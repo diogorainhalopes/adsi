@@ -285,4 +285,4 @@ BUT X>=0
 
 
 
- [Lecture 9 Tuning](Lectures/Lecture-9-Database-Tuning.md) | 
+ [Lecture 9 Tuning](Lectures/Lecture-9-Database-Tuning.md) | [Lecture 11 Tuning](Lectures/Lecture-11-Database-Tuning-(conclusion).md) 
