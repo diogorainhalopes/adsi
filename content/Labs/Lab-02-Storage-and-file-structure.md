@@ -115,7 +115,7 @@ WHERE p.object_id = OBJECT_ID('ExampleTable')
 |    name     | rows |
 |:-----------:|:----:|
 | SECONDARY_1 |  4   |
-| SECONDARY_1 |  5   |
+| SECONDARY_2 |  5   |
 
 #### Investigating contents of a data file in SQL Server
 
@@ -130,22 +130,19 @@ WHERE p.object_id = OBJECT_ID('ExampleTable')
 - A row offset table starts at the end of the page 
 	- each row offset contains one entry for each row on the page
 	- each row offset entry records how far the first byte of the row is from the start of the page.
-(insert img)
 
-When SQL Server needs to manage space (allocate new pages, or deallocate existing ones), it
-does so in groups of 8. A group of 8 pages is called an **extent**. An extent is 8 physically
-contiguous pages, or 64 KB. This means SQL Server databases have 16 extents per megabyte.
+![](assets/datapage.png)
+
+When SQL Server needs to manage space (allocate new pages, or deallocate existing ones), it does so in groups of 8. A group of 8 pages is called an **extent**. An extent is 8 physically contiguous pages, or 64 KB. This means SQL Server databases have 16 extents per megabyte.
 
 SQL Server has two types of extents: **uniform** and **mixed**. Uniform extents are owned by a
 single object; all eight pages in the extent can only be used by the owning object. Mixed
 extents are shared by up to 8 objects; each of the eight pages in the extent can be owned by
 a different object.
 
-(insert img)
+![](assets/uni_mix_ext.png)
 
-
-Log files (.ldf) do not contain pages; they contain a series of log records.
-
+**Note:** Log files (.ldf) do not contain pages; they contain a series of log records.
 
 ##### Page Allocations
 
@@ -163,12 +160,10 @@ WHERE page_type_desc = 'DATA_PAGE';
 |      1       |           8            |
 |      2       |           8            |
 
-- The system function sys.dm_db_database_page_allocations provides information about the
-pages that belong to a particular database object (in this case, ExampleTable).
+- The system function sys.dm_db_database_page_allocations provides information about the pages that belong to a particular database object (in this case, ExampleTable).
 - The type of pages that we are interest in is data pages (more on this later).
 
 **Note***: In our case there are two partitions, and the page ID might happen to be the same in each of those partitions.
-
 
 Using system views:
 
@@ -181,8 +176,7 @@ WHERE p.object_id = OBJECT_ID('ExampleTable')
 	AND p.partition_number = dds.destination_id
 	AND dds.data_space_id = df.data_space_id;
 ```
-- The system view sys.partitions returns a row for each partition of all the tables and indexes in the database 
-	(in this case, we want the partitions of ExampleTable only).
+- The system view sys.partitions returns a row for each partition of all the tables and indexes in the database (in this case, we want the partitions of ExampleTable only).
 - The system view sys.destination_data_spaces returns a row for each data space destination of each partition scheme.
 - The system view sys.database_files indicates the data file that corresponds to each data space.
 
@@ -244,7 +238,7 @@ Going to the **Messages Tab**
 - The number of physical reads is 0 because the data pages did not have to be read from disk
 	(they were already in memory)
 
-1) Enabling ** Include Actual Execution Plan** (Ctrl+M) 
+1) Enabling **Include Actual Execution Plan** (Ctrl+M) 
 2) Re-executing only the ```SELECT``` query
 3) Switching to the **Execution Plan** Tab
 
@@ -270,9 +264,8 @@ WHERE page_type_desc = 'IAM_PAGE';
 
 As the table grows pages are allocated in groups of 8 (extents).
 
-As the file grows, SQL Server needs to know which extents contain pages of a given object.
-For this purpose, SQL Server uses a special type of page, called **IAM page (Index Allocation
-Map)**.
+As the file grows, SQL Server needs to know which extents contain pages of a given object. 
+For this purpose, SQL Server uses a special type of page, called **IAM page (Index Allocation Map)**.
 
 Internally, an IAM page contains a bitmap where each bit refers to an extent in the file, and the bit value (1 or 0) indicates whether the extent has been allocated to the object or not
 
@@ -290,6 +283,6 @@ DBCC PAGE('ExampleDB', 3, 16, 1);
 	- and single page allocations in mixed extents, if any. etc
 - Second record: Bitmap
 	- shows extents allocated to the object in the same aprtition as the IAM
-
+[See more](https://learn.microsoft.com/en-us/sql/relational-databases/pages-and-extents-architecture-guide?view=sql-server-ver16#IAM)
 
 ## ![Lab 02 Screenshot](assets/lab02_screenshot.png)

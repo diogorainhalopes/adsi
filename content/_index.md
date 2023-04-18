@@ -8,6 +8,7 @@ enableToc: false
 ### Indexes
 - [Index Lab Notes](Labs/Index-Lab-Notes)
 - [Index Lecture Notes](Lectures/Index-Lecture-Notes)
+- [Useful Transact-SQL](Other/Useful-Transact-SQL)
 
 ### Links
 - https://fenix.tecnico.ulisboa.pt/disciplinas/AOBD/2022-2023/2-semestre/pagina-inicial

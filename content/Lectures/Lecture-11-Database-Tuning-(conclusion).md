@@ -201,11 +201,11 @@ The disk will tell us that its written when in disk controller
 
 #### Critical Query Monitoring
 
-![](q1.png)
+![](assets/q1.png)
 
 #### Routine Monitoring
 
-![](q2n3.png)
+![](assets/q2n3.png)
 
 
 
@@ -227,12 +227,12 @@ The disk will tell us that its written when in disk controller
 1. **Identify the critical queries**  
 	- Use Event Monitor to find end-of-statement with execution measures
 
-![](evmon.png)
+![](assets/evmon.png)
 
 2. **Analyze the execution plan**  
 	- Use Query Plan Explainer to analyze the relative cost of each operation
 
-![](qpexpl.png)
+![](assets/qpexpl.png)
 
 In the execution plan, pay attention to:  
 - Access methods  
@@ -249,7 +249,7 @@ In the execution plan, pay attention to:
 3. Profile the execution
 	- Use Performance Monitor to analyze duration and resource consumption
 
-![](perfmon.png)
+![](assets/perfmon.png)
 
 Duration involves 3 indicators:  
 - Elapsed time  
@@ -279,7 +279,7 @@ Two common scenarios
 		- Avoid records out of place (**row displacement**)  
 	- Periodic file reorganization may be necessary
 	
-![](storehier.png)
+![](assets/storehier.png)
 
 2. **Buffer manager**  
 	- Two main performance indicators to monitor  
@@ -287,7 +287,7 @@ Two common scenarios
 		- Nu**mber of free pages** – how much space is left in the buffer  
 	- In SQL Server, these and other metrics can be obtained from system views 
 
-![](buffman.png)
+![](assets/buffman.png)
 
 3. **Locking subsystem**  
 	- Useful indicators  
@@ -296,7 +296,7 @@ Two common scenarios
 		- Number of deadlocks or timeouts  
 	- SQL Server provides comprehensive wait statistics through system views
 
-![](locklist.png)
+![](assets/locklist.png)
 
 4. Logging subsystem
 	- Useful indicators  
@@ -318,7 +318,7 @@ Two common scenarios
 	- Identify whether processes are database or non-database related  
 	- Check CPU utilization of system (OS) processes in idle state
 
-![](cpusuage.png)
+![](assets/cpusuage.png)
 
 2. Disks  
 	- Main indicators  
@@ -327,7 +327,7 @@ Two common scenarios
 		- Bytes transferred per second  
 	- Disk utilization can be monitored with OS utilities
 
-![](disktr.png)
+![](assets/disktr.png)
 
 3. Memory
 	- Some indicators  
@@ -335,7 +335,7 @@ Two common scenarios
 		- Percentage of paging file in use  
 	- Size of paging/swap file is an indication of how much memory is lacking
 
-![](memusa.png)
+![](assets/memusa.png)
 
 
  [Lecture 10 Tuning (continued)](Lectures/Lecture-10-Database-Tuning-(continued).md)

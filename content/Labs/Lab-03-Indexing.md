@@ -48,7 +48,6 @@ In the Results tab, SQL Server will show three results sets:
 	- EQ_ROWS is the number of values equal to the upper bound;
 	- DISTINCT_RANGE_ROWS is the number of distinct values that fall inside the bin (excluding the upper bound);  
 	- AVG_RANGE_ROWS is the average number of duplicate values inside the bin (excluding the upper bound).  
-	- 
 Note that, for a clustered index (i.e. an index with unique values):  
 - DISTINCT_RANGE_ROWS = RANGE_ROWS  
 - AVG_RANGE_ROWS = 1
